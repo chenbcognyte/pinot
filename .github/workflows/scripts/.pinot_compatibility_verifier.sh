@@ -37,7 +37,7 @@ echo "  <mirrors>">> ${SETTINGS_FILE}
 echo "    <mirror>">> ${SETTINGS_FILE}
 echo "      <id>confluent-mirror</id>">> ${SETTINGS_FILE}
 echo "      <mirrorOf>confluent</mirrorOf>">> ${SETTINGS_FILE}
-echo "      <url>https://packages.confluent.io/maven/</url>">> ${SETTINGS_FILE}
+echo "      <url>http://packages.confluent.io/maven/</url>">> ${SETTINGS_FILE}
 echo "      <blocked>false</blocked>">> ${SETTINGS_FILE}
 echo "    </mirror>">> ${SETTINGS_FILE}
 echo "  </mirrors>">> ${SETTINGS_FILE}
