@@ -37,8 +37,8 @@
   </properties>
   <repositories>
     <repository>
-      <id>confluent</id>
-      <url>https://packages.confluent.io/maven/</url>
+      <id>nexus</id>
+      <url>https://cisnexus01:8443/repository/maven-public</url>
     </repository>
   </repositories>
   <dependencies>
