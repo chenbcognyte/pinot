@@ -37,6 +37,7 @@ ENV MAVEN_CONFIG /opt/.m2
 
 
 COPY ./Cognyte-Root-CA__Base64-X509.cer /usr/local/share/ca-certificates/cognyte-ca.crt
+COPY ./Cognyte-Root-CA__Base64-X509.cer2 /usr/local/share/ca-certificates/cognyte-ca2.crt
 
 RUN update-ca-certificates
 
