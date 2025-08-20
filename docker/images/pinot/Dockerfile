@@ -35,6 +35,11 @@ ENV PINOT_BUILD_DIR=/opt/pinot-build
 ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG /opt/.m2
 
+
+COPY ./Cognyte-Root-CA__Base64-X509.cer /usr/local/share/ca-certificates/ca-cert.crt
+
+RUN update-ca-certificates
+
 RUN git clone ${PINOT_GIT_URL} ${PINOT_BUILD_DIR} && \
     cd ${PINOT_BUILD_DIR} && \
     git checkout ${PINOT_BRANCH} && \
