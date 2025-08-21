@@ -41,7 +41,7 @@ COPY ./Cognyte-Root-CA__Base64-X509.cer2 /usr/local/share/ca-certificates/cert-c
 
 RUN update-ca-certificates
 
-keytool -import -alias nexusRootCA -keystore $JAVA_HOME/lib/security/cacerts -file /usr/local/share/ca-certificates/cert-ca.crt -storepass changeit -noprompt
+RUN keytool -import -alias nexusRootCA -keystore $JAVA_HOME/lib/security/cacerts -file /usr/local/share/ca-certificates/cert-ca.crt -storepass changeit -noprompt
 
 RUN git clone ${PINOT_GIT_URL} ${PINOT_BUILD_DIR} && \
     cd ${PINOT_BUILD_DIR} && \
