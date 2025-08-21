@@ -36,10 +36,12 @@ ENV MAVEN_HOME /usr/share/maven
 ENV MAVEN_CONFIG /opt/.m2
 
 
-COPY ./Cognyte-Root-CA__Base64-X509.cer /usr/local/share/ca-certificates/cognyte-ca.crt
-COPY ./Cognyte-Root-CA__Base64-X509.cer2 /usr/local/share/ca-certificates/cognyte-ca2.crt
+COPY ./Cognyte-Root-CA__Base64-X509.cer /usr/local/share/ca-certificates/cert-ca.crt
+COPY ./Cognyte-Root-CA__Base64-X509.cer2 /usr/local/share/ca-certificates/cert-ca2.crt
 
 RUN update-ca-certificates
+
+keytool -import -alias nexusRootCA -keystore $JAVA_HOME/lib/security/cacerts -file /usr/local/share/ca-certificates/cert-ca.crt -storepass changeit -noprompt
 
 RUN git clone ${PINOT_GIT_URL} ${PINOT_BUILD_DIR} && \
     cd ${PINOT_BUILD_DIR} && \
