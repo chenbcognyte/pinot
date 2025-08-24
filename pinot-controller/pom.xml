@@ -107,7 +107,6 @@
         <configuration>
           <workingDirectory>src/main/resources/</workingDirectory>
           <installDirectory>target</installDirectory>
-          <nodeDownloadRoot>http://nodejs.org/dist/</nodeDownloadRoot>
         </configuration>
 
         <executions>
